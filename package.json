@@ -5,7 +5,10 @@
   "dependencies": {
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-scripts-ts": "3.1.0"
+    "react-redux": "^6.0.0",
+    "react-scripts-ts": "3.1.0",
+    "redux": "^4.0.1",
+    "redux-actions": "^2.6.4"
   },
   "scripts": {
     "start": "react-scripts-ts start",
@@ -14,10 +17,21 @@
     "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.1.15",
     "@types/jest": "^23.3.13",
     "@types/node": "^10.12.18",
     "@types/react": "^16.7.20",
     "@types/react-dom": "^16.0.11",
+    "@types/react-redux": "^7.0.0",
+    "@types/redux-actions": "^2.3.1",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "enzyme-to-json": "^3.3.5",
     "typescript": "^3.2.4"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }

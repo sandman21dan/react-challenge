@@ -1,22 +1,24 @@
 import * as React from 'react';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import './App.css';
+import { reducer } from './state';
 
-import logo from './logo.svg';
 
-class App extends React.Component {
-  public render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+import Counter from './Counter';
+
+const store = createStore(
+  reducer,
+  (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__(),
+);
+
+const App: React.StatelessComponent = () => (
+  <Provider store={store}>
+    <div className="App">
+      <h2>Counter app</h2>
+      <Counter />
+    </div>
+  </Provider>
+);
 
 export default App;
