@@ -6,6 +6,8 @@ import { reducer } from './state';
 
 
 import Counter from './Counter';
+import List from './molecules/List';
+import EntryField from './atoms/EntryField';
 
 const store = createStore(
   reducer,
@@ -17,6 +19,8 @@ const App: React.StatelessComponent = () => (
     <div className="App">
       <h2>Counter app</h2>
       <Counter />
+      <EntryField/>
+      <List/>
     </div>
   </Provider>
 );
