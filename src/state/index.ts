@@ -17,12 +17,14 @@ const INCREMENT = 'INCREMENT';
 const DECREMENT = 'DECREMENT';
 const INPUT_FIELD_CHANGE = 'INPUT_FIELD_CHANGE'
 const ADD_TO_NUMBERS = 'ADD_TO_NUMBERS'
+const RESET_NUMBERS = 'RESET_NUMBERS'
 
 
 export const increment = createAction(INCREMENT);
 export const decrement = createAction(DECREMENT);
 export const addToNumbers = createAction(ADD_TO_NUMBERS, (numbers: number) => numbers);
 export const inputFieldChange = createAction(INPUT_FIELD_CHANGE, (entry: number) => entry);
+export const resetNumberList = createAction(RESET_NUMBERS, (numbers: number) => numbers);
 
 const counterReducer = (counter: number = defaultState.counter, action: Action<void>) => {
   switch (action.type) {
@@ -51,6 +53,8 @@ const numbersReducer = (numbers: number[] = defaultState.numbers, action: Action
         return [...numbers, action.payload];
       }
       return numbers;
+    case RESET_NUMBERS:
+      return defaultState.numbers;
     default:
       return numbers;
   }
