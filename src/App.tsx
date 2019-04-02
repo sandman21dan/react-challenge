@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import './App.css';
-import { reducer } from './state';
+import reducer from './state';
 
 
 import Counter from './Counter';
@@ -19,8 +19,8 @@ const App: React.StatelessComponent = () => (
     <div className="App">
       <h2>Counter app</h2>
       <Counter />
-      <EntryField/>
-      <List/>
+      <EntryField />
+      <List />
     </div>
   </Provider>
 );
