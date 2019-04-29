@@ -4,7 +4,6 @@ import { createStore } from 'redux';
 import './App.css';
 import reducer from './state';
 
-
 import Counter from './Counter';
 import List from './molecules/List';
 import EntryField from './atoms/EntryField';
